@@ -4,7 +4,6 @@ import DownloadIcon from '@mui/icons-material/Download';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
-import theme from "../../../../theme";
 
 const Hero   = () => {
 
@@ -13,10 +12,17 @@ const Hero   = () => {
         height: "100vh",
         display:"flex",
         alignItems:"center",
+        [theme.breakpoints.up('xs')]: {
+            paddingTop:"180px"
+        },
+
+        [theme.breakpoints.up('md')]: {
+            paddingTop:"0"
+        }
     }))
 
     const StyledImg = styled("img")(({theme})=> ({
-        width: "70%",
+        width: "75%",
         borderRadius: "50%",
         border: `1px solid ${theme.palette.primary.contrastText}`
     }))
@@ -28,7 +34,7 @@ const Hero   = () => {
                     <Grid container spacing={2}>
                         <Grid item xs={12} md={5}>
                             <Box position="relative">
-                                <Box position="absolute" width={"110%"} top={-100} right={0}>
+                                <Box position="absolute" width={"150%"} top={-100} right={0}>
                                     <AnimatedBackground />
                                 </Box>
                                 <Box position="relative" textAlign="center">
